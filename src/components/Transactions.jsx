@@ -7,7 +7,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table"
-import transactions from "../constants/index"
+import { transactions } from "../constants/index"
+
 
 const Transactions = () => {
   return (
@@ -20,14 +21,12 @@ const Transactions = () => {
     </TableRow>
   </TableHeader>
   <TableBody>
-    <TableRow>
     {transactions.map((item) => (
-      <TableCell className="font-medium" key={item.id}>{item.cost}</TableCell>
-      <TableCell className="text-right"key={item.id}>$250.00</TableCell>
-    ))}
-      <TableCell className="font-medium">INV001</TableCell>
-      <TableCell className="text-right">$250.00</TableCell>
+    <TableRow key={item.id}>
+      <TableCell className="font-medium">{item.customer}</TableCell>
+      <TableCell className="text-right">{item.amount}</TableCell>
     </TableRow>
+    ))}
   </TableBody>
 </Table>
 
